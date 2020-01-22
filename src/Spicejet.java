@@ -1,7 +1,9 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class Spicejet {
 
@@ -22,13 +24,12 @@ public class Spicejet {
 	
 		driver.findElement(By.id("ctl00_mainContent_ddl_Child")).sendKeys(Keys.ARROW_DOWN);
 		
-		
 		driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency")).click();
-		/*for (int j = 0; j < 3; j++) {
-			driver.findElement(By.id("ctl00_mainContent_ddl_Child")).sendKeys(Keys.ARROW_DOWN);
-		
-		}
-		driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency")).click(); */
+		///WebElement we_Currancy = ;
+				
+		Select dropdown = new Select(driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency")));  
+		dropdown.selectByIndex(2);
+	
 		
 		
 		
