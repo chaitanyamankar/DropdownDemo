@@ -15,14 +15,10 @@ public class Spicejet {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.spicejet.com/default.aspx");
 		driver.manage().window().maximize();
-		driver.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT")).click();
-		driver.findElement(By.xpath("//a[@value='IXU']")).click();;
-		Thread.sleep(1000);
-		//driver.findElement(By.xpath("(//a[@value='MAA'])[2]")).click();
-		driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value='MAA']")).click();
-		//driver.findElement(By.className("ui-state-default ui-state-highlight ui-state-active")).click();;
-				
-		driver.findElement(By.id("divpaxinfo")).click();
+		Thread.sleep(2000);
+		
+						
+		/*driver.findElement(By.id("divpaxinfo")).click();
 		
 		for (int i = 0; i < 3; i++) {
 			driver.findElement(By.id("ctl00_mainContent_ddl_Adult")).sendKeys(Keys.ARROW_DOWN);
@@ -34,11 +30,23 @@ public class Spicejet {
 		driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency")).click();
 		///WebElement we_Currancy = ;
 				
-		Select dropdown = new Select(driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency")));  
-		dropdown.selectByIndex(2);
+		*/
+		
+	//driver.findElement(By.linkText(" Family and Friends")).click();
+		//System.out.println(driver.findElement(By.xpath("//input[@id='ctl00_mainContent_chk_IndArm']")).isSelected());
+		//System.out.println(driver.findElements(By.xpath("//input[@type='checkbox']")).size());
+		
+		driver.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT")).click();
+		driver.findElement(By.xpath("//a[@value='IXU']")).click();;
+		Thread.sleep(1000);
+		//driver.findElement(By.xpath("(//a[@value='MAA'])[2]")).click();
+		driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value='MAA']")).click();
+		//driver.findElement(By.className("ui-state-default ui-state-highlight ui-state-active")).click();;
 	
+		driver.findElement(By.cssSelector(".ui-state-default.ui-state-highlight.ui-state-active.ui-state-hover")).click();
 		
-		
+		Select dropdown = new Select(driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency")));  
+		dropdown.selectByValue("USD");
 		
 		
 	}
